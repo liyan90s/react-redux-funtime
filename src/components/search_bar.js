@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
           <input 
             className="form-control"
             value={this.state.term}
-            onChange={this.handleOnChange.bind(this)} />
+            onChange={(event) => this.handleOnChange(event)} />
           <span className="input-group-btn">
             <button className="btn btn-default" type="button">Go!</button>
           </span>
