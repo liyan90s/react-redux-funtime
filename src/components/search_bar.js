@@ -9,16 +9,23 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <input 
-          value={this.state.term}
-          onChange={this.handleOnChange.bind(this)} />
+      <div className="search-bar col-md-6">
+        <div className="input-group">
+          <input 
+            className="form-control"
+            value={this.state.term}
+            onChange={this.handleOnChange.bind(this)} />
+          <span className="input-group-btn">
+            <button className="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
       </div>
     );
   }
 
-  handleOnChange(event) {
+  handleOnChange(event) {    
     this.setState({term: event.target.value});
+    this.props.onSearch(event.target.value);
   }
 }
 
