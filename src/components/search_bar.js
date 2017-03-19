@@ -7,6 +7,11 @@ class SearchBar extends React.Component {
     this.state = {term: ''};
   }
 
+  handleOnChange(event) {    
+    this.setState({term: event.target.value});
+    this.props.onSearch(event.target.value);
+  }
+
   render() {
     return (
       <div className="search-bar col-md-6">
@@ -21,11 +26,6 @@ class SearchBar extends React.Component {
         </div>
       </div>
     );
-  }
-
-  handleOnChange(event) {    
-    this.setState({term: event.target.value});
-    this.props.onSearch(event.target.value);
   }
 }
 
