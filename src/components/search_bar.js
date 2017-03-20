@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
             value={this.state.term}
             onChange={(event) => this.handleOnChange(event)} />
           <span className="input-group-btn">
-            <button className="btn btn-default" type="button">Go!</button>
+            <button className="btn btn-default" type="button">Search</button>
           </span>
         </div>
       </div>
