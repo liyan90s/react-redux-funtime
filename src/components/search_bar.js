@@ -5,6 +5,9 @@ class SearchBar extends React.Component {
     super(props);
 
     this.state = {term: ''};
+    // we can bind 'this' to the handleOnChange to resolve
+    // the 'this' variable in the callback issue
+    // this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleOnChange(event) {    
