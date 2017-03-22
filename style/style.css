@@ -1,0 +1,8 @@
+#weather-list td, #weather-list th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.input-group {
+  margin: 10px auto;
+}
