@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FETCH_POSTS = 'FETCH_POST';
 
-const ROOT_URL  = 'http://reduxblog.heroku.com/api';
+const ROOT_URL  = 'http://reduxblog.herokuapp.com/api';
 const API_KEY   = '?key=optimus21';
 
 export function fetchPosts() {
