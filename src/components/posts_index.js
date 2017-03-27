@@ -9,16 +9,41 @@ class PostsIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+  __renderPosts() {
+    const { posts } = this.props;
+    if (!posts) {
+      return '';
+    }
+
+    return posts.map((post) => {
+      return (
+        <li className="list-group-item" key={post.id}>
+          <Link to={`posts/${post.id}`}>
+            <span>{post.title}</span>
+            <span className="pull-xs-right">{post.categories}</span>
+          </Link>
+        </li>
+      );
+    });
+  }
+
   render() {
     return (
-      <div>
-        Hey Index
+      <div>        
         <div className="text-xs-right" >
           <Link to="posts/new" className="btn btn-primary" >Add a Post</Link>
         </div>
+        <p>Posts</p>
+        <ul className="list-group">
+          {this.__renderPosts()}
+        </ul>
       </div>
     );
   }
 }
 
-export default connect(null, {fetchPosts: fetchPosts})(PostsIndex);
+function mapStateToProps(state) {
+  return { posts: state.posts.all };
+}
+
+export default connect(mapStateToProps, {fetchPosts: fetchPosts})(PostsIndex);
