@@ -6,7 +6,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
-const API_KEY = 'AIzaSyC0VwxSHya26_rWFmVOXUDUO95ygbr70Zw';
+const API_KEY = '';
 
 // Create a new component. This component should produce some HTML
 class App extends React.Component {
